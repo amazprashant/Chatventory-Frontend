@@ -8,35 +8,35 @@ export default function AppSidebar() {
         <li className="nav-heading">Main</li>
 
         <li className="nav-item">
-            <a className="nav-link" href="dashboard.php">
+            <a className="nav-link" href="/dashboard">
                 <i className="bi bi-graph-up"></i>
                 <span>Dashboard</span>
             </a>
         </li>
 
         <li className="nav-item">
-            <a className="nav-link collapsed" href="manage-clients.php">
+            <a className="nav-link collapsed" href="/manage-clients">
                 <i className="bi bi-people-fill"></i>
                 <span>Clients</span>
             </a>
         </li>
 
         <li className="nav-item">
-            <a className="nav-link collapsed" href="manage-operators.php">
+            <a className="nav-link collapsed" href="/manage-operators">
                 <i className="bi bi-person-lines-fill"></i>
                 <span>Operators</span>
             </a>
         </li>
 
         <li className="nav-item">
-            <a className="nav-link collapsed" href="job-cards.php">
+            <a className="nav-link collapsed" href="/job-cards">
                 <i className="bi bi-journal-check"></i>
                 <span>Job Cards</span>
             </a>
         </li>
 
         <li className="nav-item">
-            <a className="nav-link collapsed" href="reports.php">
+            <a className="nav-link collapsed" href="/reports">
                 <i className="bi bi-file-earmark-bar-graph"></i>
                 <span>Reports</span>
             </a>
@@ -72,14 +72,14 @@ export default function AppSidebar() {
         <li className="nav-heading">Settings</li>
 
         <li className="nav-item">
-            <a className="nav-link collapsed" href="settings.php">
+            <a className="nav-link collapsed" href="/edit-profile">
                 <i className="bi bi-gear-fill"></i>
                 <span>Edit Profile</span>
             </a>
         </li>
 
         <li className="nav-item">
-            <a className="nav-link collapsed" href="settings.php#change-password">
+            <a className="nav-link collapsed" href="/edit-profile#change-password">
                 <i className="bi bi-lock-fill"></i>
                 <span>Change Password</span>
             </a>
@@ -93,7 +93,7 @@ export default function AppSidebar() {
         </li>
 
         <li className="nav-item">
-            <a className="nav-link collapsed" href="contact.php">
+            <a className="nav-link collapsed" href="contact">
                 <i className="bi bi-chat-dots-fill"></i>
                 <span>Contact Us</span>
             </a>
