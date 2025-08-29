@@ -1,5 +1,6 @@
 import AppHeader from "../components/AppHeader";
 import AppSidebar from "../components/AppSidebar";
+import Breadcrumb from "../components/Breadcrumb";
 
 export default function JobCard() {
     return (
@@ -11,12 +12,7 @@ export default function JobCard() {
             <div className="col-lg-6 col-md-6 col-sm-12">
                 <div className="pagetitle">
                     <h1>Job Cards</h1>
-                    <nav>
-                        <ol className="breadcrumb">
-                            <li className="breadcrumb-item"><a href="dashboard.php"><i className="bi bi-house-door"></i> Home</a></li>
-                            <li className="breadcrumb-item active">Job Cards</li>
-                        </ol>
-                    </nav>
+                    <Breadcrumb/>
                 </div>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-12 text-end">

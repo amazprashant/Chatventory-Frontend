@@ -1,5 +1,6 @@
 import AppHeader from "../components/AppHeader";
 import AppSidebar from "../components/AppSidebar";
+import Breadcrumb from "../components/Breadcrumb";
 
 export default function EditProfile(){
     return (
@@ -10,13 +11,7 @@ export default function EditProfile(){
 
     <div className="pagetitle">
       <h1>Settings</h1>
-      <nav>
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item"><a href="dashboard.php"><i className="bi bi-house-door"></i> Home</a></li>
-         
-          <li className="breadcrumb-item active">Settings</li>
-        </ol>
-      </nav>
+      <Breadcrumb />
     </div>
 
     <section className="section profile">
