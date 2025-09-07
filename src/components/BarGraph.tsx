@@ -16,9 +16,14 @@ const data = {
   labels: ["Apple", "Orange", "Banana", "Mango", "Grape"],
   datasets: [
     {
-      label: "Fruits",
+      label: "Mangoes",
       data: [10, 15, 25, 30, 28],
       backgroundColor: "rgba(245, 224, 39, 0.77)",
+    },
+    {
+      label: "Apples",
+      data: [10, 15, 25, 30, 28],
+      backgroundColor: "rgba(250, 0, 0, 0.77)",
     },
   ],
 };

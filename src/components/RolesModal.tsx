@@ -13,6 +13,14 @@ const RolesModal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) 
   if (!isOpen) return null; // don’t render if modal is closed
 
   return ReactDOM.createPortal(
+    <div className="modal-backdrop fade show"
+        style={{ zIndex: 1040 }}
+        onClick={onClose}>
+
+      <div className="modal fade show d-block"
+        style={{ zIndex: 1050 }}
+        role="dialog">
+
     <div className="modal-backdrop show">
       <div className="modal d-block" tabIndex={-1}>
         <div className="modal-dialog">
@@ -36,7 +44,9 @@ const RolesModal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) 
           </div>
         </div>
       </div>
-    </div>,
+    </div>
+      </div>
+      </div>,
     document.body // portal target
   );
 };
