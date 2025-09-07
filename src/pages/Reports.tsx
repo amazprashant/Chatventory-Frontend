@@ -1,5 +1,6 @@
 import AppHeader from "../components/AppHeader";
 import AppSidebar from "../components/AppSidebar";
+import Breadcrumb from "../components/Breadcrumb";
 
 export default function Reports(){
     return(
@@ -11,12 +12,7 @@ export default function Reports(){
             <div className="col-lg-3 col-md-4 col-sm-12">
                 <div className="pagetitle">
                     <h1>View Reports</h1>
-                    <nav>
-                        <ol className="breadcrumb">
-                            <li className="breadcrumb-item"><a href="dashboard.php"><i className="bi bi-house-door"></i> Home</a></li>
-                            <li className="breadcrumb-item active">View Reports</li>
-                        </ol>
-                    </nav>
+                    <Breadcrumb />
                 </div>
             </div>
             <div className="col-lg-3 col-md-4 col-sm-12">

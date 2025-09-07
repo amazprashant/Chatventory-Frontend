@@ -7,7 +7,7 @@ interface DashboardCardsProps {
 
 const DashboardCards: React.FC<DashboardCardsProps> = ({ icon, bgColor, title, value }) => {
   return (
-    <div className="col-xl-3 col-md-6">
+    <div className="col-xl-4 col-md-6">
       <div className="card shadow-sm border-0 rounded-4 h-100">
         <div className="card-body d-flex align-items-center">
           <div className={`icon-wrapper ${bgColor} text-white rounded-circle p-3 me-3`}>

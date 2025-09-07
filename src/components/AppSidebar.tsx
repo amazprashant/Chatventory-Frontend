@@ -17,7 +17,7 @@ export default function AppSidebar() {
         <li className="nav-item">
             <a className="nav-link collapsed" href="/manage-clients">
                 <i className="bi bi-people-fill"></i>
-                <span>Clients</span>
+                <span>Roles</span>
             </a>
         </li>
 
