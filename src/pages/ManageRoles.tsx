@@ -87,7 +87,7 @@ export default function ManageRoles() {
           onClose={() => setModalOpen(false)}
           title="Add New Role"
         >
-          <form className="row g-3">
+          <div className="row g-3">
             <div className="col-12">
               <label className="form-label">Role Name</label>
               <input
@@ -155,7 +155,7 @@ export default function ManageRoles() {
             <div className="col-12 text-end">
 
             </div>
-          </form>
+          </div>
         </Modal>
 
             </main>
