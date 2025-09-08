@@ -5,6 +5,27 @@ import Breadcrumb from "../components/Breadcrumb";
 import Modal from "../components/RolesModal";
 
 export default function ManageRoles() {
+      const [roleName, setRoleName] = useState("");
+  const [permissions, setPermissions] = useState<{ [key: string]: string }>({
+    dashboard: "na",
+    roles: "na",
+    users: "na",
+    customers: "na",
+    prospects: "na",
+    emails: "na",
+    test: "na",
+  });
+
+  const handlePermissionChange = (screen: string, value: string) => {
+    setPermissions((prev) => ({ ...prev, [screen]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Role Name:", roleName);
+    console.log("Permissions:", permissions);
+    alert("Role Added Successfully!");
+  };
     const [isModalOpen, setModalOpen] = useState(false);
     return (
         <>
@@ -76,10 +97,63 @@ export default function ManageRoles() {
                 required
               />
             </div>
+             <h6 className="mb-2">Permissions</h6>
+              <div className="table-responsive">
+                <table className="table table-bordered align-middle text-center">
+                  <thead className="table-light">
+                    <tr>
+                      <th className="text-start">Screen Name</th>
+                      <th>View</th>
+                      <th>Edit</th>
+                      <th>N/A</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {Object.keys(permissions).map((screen) => (
+                      <tr key={screen}>
+                        <td className="text-start">
+                          {screen.charAt(0).toUpperCase() + screen.slice(1)}
+                        </td>
+                        <td>
+                          <input
+                            type="radio"
+                            name={screen}
+                            value="view"
+                            checked={permissions[screen] === "view"}
+                            onChange={() =>
+                              handlePermissionChange(screen, "view")
+                            }
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="radio"
+                            name={screen}
+                            value="edit"
+                            checked={permissions[screen] === "edit"}
+                            onChange={() =>
+                              handlePermissionChange(screen, "edit")
+                            }
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="radio"
+                            name={screen}
+                            value="na"
+                            checked={permissions[screen] === "na"}
+                            onChange={() =>
+                              handlePermissionChange(screen, "na")
+                            }
+                          />
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             <div className="col-12 text-end">
-              <button type="submit" className="btn btn-success">
-                <i className="bi bi-check-circle me-1"></i> Save
-              </button>
+
             </div>
           </form>
         </Modal>

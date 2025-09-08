@@ -22,7 +22,7 @@ const data = {
     },
     {
       label: "Apples",
-      data: [10, 15, 25, 30, 28],
+      data: [20, 35, 15, 20, 18],
       backgroundColor: "rgba(250, 0, 0, 0.77)",
     },
   ],
