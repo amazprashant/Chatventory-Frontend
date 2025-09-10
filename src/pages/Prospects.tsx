@@ -7,6 +7,8 @@ import Modal from "../components/RolesModal";
 
 export default function Prospects() {
     const [isModalOpen, setModalOpen] = useState(false);
+    const [isModalCommentOpen, setModalCommentOpen] = useState(false);
+    const [isModalImportOpen, setModalImportOpen] = useState(false);
     
     return (
         <>
@@ -28,7 +30,7 @@ export default function Prospects() {
               <div>
                 <button
                   className="btn btn-warning d-flex align-items-center"
-                  onClick={() => setModalOpen(true)}> Import Prospects
+                  onClick={() => setModalImportOpen(true)}> Import Prospects
                 </button>
               </div>
                 <button
@@ -61,9 +63,10 @@ export default function Prospects() {
                                 <td>Client A</td>
                                 <td>Client</td>
                                 <td>abc@gmail.com</td>
-                                <td>Test</td>
                                 <td>
-                                    <a href='#' className='icon icon-sm icon-secondary' title='View'><i className='bi bi-eye-fill'></i></a>
+                                    <a href='#' className='icon icon-sm icon-warning' onClick={() => setModalCommentOpen(true)} title='View'><i className='bi bi-eye-fill'></i></a>
+                                </td>
+                                <td>
                                     <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                                     <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
                                 </td>
@@ -73,9 +76,10 @@ export default function Prospects() {
                                 <td>Client A</td>
                                 <td>Client</td>
                                 <td>abc@gmail.com</td>
-                                <td>Test</td>
                                 <td>
-                                    <a href='#' className='icon icon-sm icon-secondary' title='View'><i className='bi bi-eye-fill'></i></a>
+                                    <a href='#' className='icon icon-sm icon-warning' onClick={() => setModalCommentOpen(true)} title='View'><i className='bi bi-eye-fill'></i></a>
+                                </td>
+                                <td>
                                     <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                                     <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
                                 </td>
@@ -85,9 +89,10 @@ export default function Prospects() {
                                 <td>Client A</td>
                                 <td>Client</td>
                                 <td>abc@gmail.com</td>
-                                <td>Test</td>
                                 <td>
-                                    <a href='#' className='icon icon-sm icon-secondary' title='View'><i className='bi bi-eye-fill'></i></a>
+                                    <a href='#' className='icon icon-sm icon-warning' onClick={() => setModalCommentOpen(true)} title='View'><i className='bi bi-eye-fill'></i></a>
+                                </td>
+                                <td>
                                     <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                                     <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
                                 </td>
@@ -97,9 +102,10 @@ export default function Prospects() {
                                 <td>Client A</td>
                                 <td>Client</td>
                                 <td>abc@gmail.com</td>
-                                <td>Test</td>
                                 <td>
-                                    <a href='#' className='icon icon-sm icon-secondary' title='View'><i className='bi bi-eye-fill'></i></a>
+                                    <a href='#' className='icon icon-sm icon-warning' onClick={() => setModalCommentOpen(true)} title='View'><i className='bi bi-eye-fill'></i></a>
+                                </td>
+                                <td>
                                     <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                                     <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
                                 </td>
@@ -109,9 +115,10 @@ export default function Prospects() {
                                 <td>Client A</td>
                                 <td>Client</td>
                                 <td>abc@gmail.com</td>
-                                <td>Test</td>
                                 <td>
-                                    <a href='#' className='icon icon-sm icon-secondary' title='View'><i className='bi bi-eye-fill'></i></a>
+                                    <a href='#' className='icon icon-sm icon-warning' onClick={() => setModalCommentOpen(true)} title='View'><i className='bi bi-eye-fill'></i></a>
+                                </td>
+                                <td>
                                     <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                                     <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
                                 </td>
@@ -151,6 +158,30 @@ export default function Prospects() {
         </div>
       </Modal>
 
+      <Modal
+        isOpen={isModalCommentOpen}
+        onClose={() => setModalCommentOpen(false)}
+        title="Comments">
+
+        <div className="row g-3">
+          <div> 
+            <label className="form-label">Comments</label>
+          </div>
+        </div>
+      </Modal>
+
+        <Modal
+        isOpen={isModalImportOpen}
+        onClose={() => setModalImportOpen(false)}
+        title="Import File">
+
+        <div className="row g-3">
+          <div> 
+            <label className="form-label">Import File</label>
+            <input type="file" className="form-control" />
+          </div>
+        </div>
+      </Modal>
     </main>
         </>
     )

@@ -41,6 +41,14 @@ export default function AppSidebar() {
                 <span>Prospects</span>
             </a>
         </li>
+
+        <li className="nav-item">
+            <a className="nav-link collapsed" href="/emails">
+                <i className="bi bi-file-earmark-bar-graph"></i>
+                <span>Emails</span>
+            </a>
+        </li>
+
         <li className="nav-item">
             <a className="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
                 <i className="bi bi-ui-checks-grid"></i><span>More Options</span><i className="bi bi-chevron-down ms-auto"></i>

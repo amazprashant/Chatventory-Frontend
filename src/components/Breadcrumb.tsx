@@ -12,7 +12,8 @@ const breadcrumbNameMap: Record<string, string> = {
   "edit-profile": "Edit Profile",
   "contact": "Contact",
   "manage-customers": "Manage Customers",
-  "prospects":"Prospects"
+  "prospects":"Prospects",
+  "emails":"Emails"
 };
 
 const Breadcrumbs: React.FC = () => {
