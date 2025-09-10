@@ -22,23 +22,23 @@ export default function AppSidebar() {
         </li>
 
         <li className="nav-item">
-            <a className="nav-link collapsed" href="/manage-operators">
+            <a className="nav-link collapsed" href="/manage-users">
                 <i className="bi bi-person-lines-fill"></i>
-                <span>Operators</span>
+                <span>Users</span>
             </a>
         </li>
 
         <li className="nav-item">
-            <a className="nav-link collapsed" href="/job-cards">
+            <a className="nav-link collapsed" href="/manage-customers">
                 <i className="bi bi-journal-check"></i>
-                <span>Job Cards</span>
+                <span>Customers</span>
             </a>
         </li>
 
         <li className="nav-item">
-            <a className="nav-link collapsed" href="/reports">
+            <a className="nav-link collapsed" href="/prospects">
                 <i className="bi bi-file-earmark-bar-graph"></i>
-                <span>Reports</span>
+                <span>Prospects</span>
             </a>
         </li>
         <li className="nav-item">

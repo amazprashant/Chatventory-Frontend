@@ -43,8 +43,7 @@ export default function ManageRoles() {
                         <button
                         className="btn btn-secondary"
                         onClick={() => setModalOpen(true)}
-                        >
-                        <i className="bi bi-plus-circle me-1"></i> Add Roles
+                        > Add Roles
                         </button>
                     </div>
                 </div>
@@ -85,8 +84,8 @@ export default function ManageRoles() {
              <Modal
           isOpen={isModalOpen}
           onClose={() => setModalOpen(false)}
-          title="Add New Role"
-        >
+          title="Add New Role">
+            
           <div className="row g-3">
             <div className="col-12">
               <label className="form-label">Role Name</label>

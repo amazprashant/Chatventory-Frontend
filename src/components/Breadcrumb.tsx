@@ -6,11 +6,13 @@ import { Link, useLocation } from "react-router-dom";
 const breadcrumbNameMap: Record<string, string> = {
   "dashboard": "Dashboard",
   "manage-clients": "Manage Clients",
-  "manage-operators": "Manage Operators",
+  "manage-users": "Manage Users",
   "job-cards": "Job Cards",
   "reports": "Reports",
   "edit-profile": "Edit Profile",
   "contact": "Contact",
+  "manage-customers": "Manage Customers",
+  "prospects":"Prospects"
 };
 
 const Breadcrumbs: React.FC = () => {
@@ -32,8 +34,7 @@ const Breadcrumbs: React.FC = () => {
             <li
               key={index}
               className={`breadcrumb-item ${isLast ? "active" : ""}`}
-              aria-current={isLast ? "page" : undefined}
-            >
+              aria-current={isLast ? "page" : undefined}>
               {!isLast ? (
                 <Link to={routeTo}>{label}</Link>
               ) : (
