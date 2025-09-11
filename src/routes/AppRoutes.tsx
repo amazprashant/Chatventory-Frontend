@@ -6,7 +6,6 @@ import ManageUsers from "../pages/ManageUsers";
 import Customers from "../pages/Customers";
 import Reports from "../pages/Reports";
 import Prospects from "../pages/Prospects";
-import Emails from "../pages/Emails";
 import EditProfile from "../pages/EditProfile";
 import Contact from "../pages/Contact";
 import NotFoundPage from '../pages/NotFoundPage';
@@ -27,7 +26,6 @@ function AppRoutes() {
         <Route path="manage-users" element = {<ManageUsers/>} />
         <Route path="manage-customers" element = {<Customers/>} />
         <Route path="prospects" element = {<Prospects/>} />
-        <Route path="emails" element = {<Emails/>} />
         <Route path="reports" element = {<Reports/>} />
         <Route path="edit-profile" element = {<EditProfile/>} />
         <Route path="contact" element = {<Contact/>} />
