@@ -13,7 +13,11 @@ const breadcrumbNameMap: Record<string, string> = {
   "contact": "Contact",
   "manage-customers": "Manage Customers",
   "prospects":"Prospects",
-  "emails":"Emails"
+  "emails":"Emails",
+  "sender-email":"Sender Emails",
+  "templates":"Templates",
+  "mailing-lists":"Mailing Lists",
+  "history":"History", 
 };
 
 const Breadcrumbs: React.FC = () => {

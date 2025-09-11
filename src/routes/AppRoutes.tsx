@@ -10,6 +10,11 @@ import Emails from "../pages/Emails";
 import EditProfile from "../pages/EditProfile";
 import Contact from "../pages/Contact";
 import NotFoundPage from '../pages/NotFoundPage';
+import SenderEmails from '../pages/SenderEmails';
+import Templates from '../pages/Templates';
+import MailingLists from '../pages/MailingLists';
+import History from '../pages/History';
+
 
 
 function AppRoutes() {
@@ -26,6 +31,11 @@ function AppRoutes() {
         <Route path="reports" element = {<Reports/>} />
         <Route path="edit-profile" element = {<EditProfile/>} />
         <Route path="contact" element = {<Contact/>} />
+        <Route path="sender-email" element = {<SenderEmails/>} />
+        <Route path="templates" element = {<Templates/>} />
+        <Route path="mailing-lists" element = {<MailingLists/>} />
+        <Route path="history" element = {<History/>} />
+
         <Route path="*" element={<NotFoundPage />} />
 
       </Routes>

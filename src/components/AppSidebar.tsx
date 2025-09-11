@@ -51,27 +51,27 @@ export default function AppSidebar() {
 
         <li className="nav-item">
             <a className="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-                <i className="bi bi-ui-checks-grid"></i><span>More Options</span><i className="bi bi-chevron-down ms-auto"></i>
+                <i className="bi bi-ui-checks-grid"></i><span>Emails</span><i className="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="charts-nav" className="nav-content collapse" data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="#">
-                        <i className="bi bi-dot"></i><span>Option 1</span>
+                    <a href="sender-email">
+                        <i className="bi bi-dot"></i><span>Sender Emails</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i className="bi bi-dot"></i><span>Option 2</span>
+                    <a href="templates">
+                        <i className="bi bi-dot"></i><span>Templates</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i className="bi bi-dot"></i><span>Option 3</span>
+                    <a href="mailing-lists">
+                        <i className="bi bi-dot"></i><span>Mailing Lists</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i className="bi bi-dot"></i><span>Option 4</span>
+                    <a href="history">
+                        <i className="bi bi-dot"></i><span>History</span>
                     </a>
                 </li>
             </ul>
