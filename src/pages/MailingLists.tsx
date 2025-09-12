@@ -22,6 +22,11 @@ export default function MailingLists() {
     test: "na",
   });
 
+  const customers = [
+    { firstName: "Test", lastName: "Test", email: "test122@gmail.com" },
+    { firstName: "demo", lastName: "demo", email: "demo122@gmail.com" },
+    { firstName: "sakshi", lastName: "sakshi", email: "sakshi122@gmail.com" },
+  ];
   const handlePermissionChange = (screen: string, value: string) => {
     setPermissions((prev) => ({ ...prev, [screen]: value }));
   };
@@ -58,13 +63,6 @@ export default function MailingLists() {
               <h1>Manage Roles</h1>
               <Breadcrumb />
             </div>
-          </div>
-          <div className="col-lg-6 col-md-6 col-sm-12 text-end">
-            <button
-              className="btn btn-secondary"
-              onClick={() => setModalOpen(true)}
-            > Add Roles
-            </button>
           </div>
         </div>
 
@@ -211,34 +209,26 @@ export default function MailingLists() {
         </div>
         <Modal isOpen={isModalAddMailingOpen} onClose={() => setModalAddMailingOpen(false)} title="Send Email">
           <form onSubmit={handleSubmit}>
-            {/* Sender Email */}
+            {/* Subject */}
             <div className="mb-3">
-              <label className="form-label">Senders Emails</label>
-              <select
-                className="form-select"
-                name="senderEmail"
-                value={formData.senderEmail}
+              <label className="form-label">Name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="subject"
+                value={formData.subject}
                 onChange={handleChange}
+                placeholder="Enter subject"
                 required
-              >
-                <option value="">Select Senders Email</option>
-                <option value="noreply@marketsai.com">noreply@marketsai.com</option>
-                <option value="support@marketsai.com">support@marketsai.com</option>
-              </select>
+              />
             </div>
-
             {/* Send To Options */}
             <div className="mb-3">
-              <label className="form-label">Send to</label>
+              <label className="form-label">Type</label>
               <div className="d-flex flex-wrap gap-3">
                 {[
-                  "Mailing List",
-                  "Customer Type",
-                  "Individual",
                   "Email",
-                  "Experience",
-                  "Traded",
-                  "Prospects",
+                  "Customer Name",
                 ].map((option) => (
                   <div key={option} className="form-check">
                     <input
@@ -258,7 +248,7 @@ export default function MailingLists() {
 
             {/* Prospects */}
             <div className="mb-3">
-              <label className="form-label">Prospects</label>
+              <label className="form-label">Customer List</label>
               <select
                 className="form-select"
                 name="prospects"
@@ -271,33 +261,6 @@ export default function MailingLists() {
               </select>
             </div>
 
-            {/* Subject */}
-            <div className="mb-3">
-              <label className="form-label">Subject</label>
-              <input
-                type="text"
-                className="form-control"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                placeholder="Enter subject"
-                required
-              />
-            </div>
-
-            {/* Body */}
-            <div className="mb-3">
-              <label className="form-label">Body</label>
-              <textarea
-                className="form-control"
-                name="body"
-                rows={6}
-                value={formData.body}
-                onChange={handleChange}
-                placeholder="Write your email content..."
-              ></textarea>
-            </div>
-
             <div className="modal-footer">
               <button type="button" className="btn btn-secondary" onClick={() => setModalEmailOpen(false)}>
                 Close
@@ -308,94 +271,42 @@ export default function MailingLists() {
             </div>
           </form>
         </Modal>
-        <Modal isOpen={isModalUploadOpen} onClose={() => setModalUploadOpen(false)} title="Send Email">
+        <Modal isOpen={isModalUploadOpen} onClose={() => setModalUploadOpen(false)} title="Upload">
           <form onSubmit={handleSubmit}>
             {/* Sender Email */}
-            <div className="mb-3">
-              <label className="form-label">Senders Emails</label>
-              <select
-                className="form-select"
-                name="senderEmail"
-                value={formData.senderEmail}
-                onChange={handleChange}
-                required
-              >
-                <option value="">Select Senders Email</option>
-                <option value="noreply@marketsai.com">noreply@marketsai.com</option>
-                <option value="support@marketsai.com">support@marketsai.com</option>
-              </select>
-            </div>
-
-            {/* Send To Options */}
-            <div className="mb-3">
-              <label className="form-label">Send to</label>
-              <div className="d-flex flex-wrap gap-3">
-                {[
-                  "Mailing List",
-                  "Customer Type",
-                  "Individual",
-                  "Email",
-                  "Experience",
-                  "Traded",
-                  "Prospects",
-                ].map((option) => (
-                  <div key={option} className="form-check">
+               <div className="mb-3">
+                    <label className="form-label">Name</label>
                     <input
-                      className="form-check-input"
-                      type="radio"
-                      name="sendTo"
-                      value={option}
-                      checked={formData.sendTo === option}
+                      type="text"
+                      name="name"
+                      value={formData.name}
                       onChange={handleChange}
+                      className="form-control"
+                      placeholder="Enter name"
                       required
                     />
-                    <label className="form-check-label">{option}</label>
                   </div>
-                ))}
-              </div>
-            </div>
 
-            {/* Prospects */}
-            <div className="mb-3">
-              <label className="form-label">Prospects</label>
-              <select
-                className="form-select"
-                name="prospects"
-                value={formData.prospects}
-                onChange={handleChange}
-              >
-                <option value="">Select an Option</option>
-                <option value="prospect1">Prospect 1</option>
-                <option value="prospect2">Prospect 2</option>
-              </select>
-            </div>
+                  {/* File Upload */}
+                  <div className="mb-3">
+                    <label className="form-label">Upload xls and .csv File</label>
+                    <input
+                      type="file"
+                      name="file"
+                      accept=".xls,.xlsx,.csv"
+                      onChange={handleChange}
+                      className="form-control"
+                      required
+                    />
+                  </div>
 
-            {/* Subject */}
-            <div className="mb-3">
-              <label className="form-label">Subject</label>
-              <input
-                type="text"
-                className="form-control"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                placeholder="Enter subject"
-                required
-              />
-            </div>
+                  {/* Download link */}
+                  <div className="mb-3">
+                    <a href="/sample-format.csv" download>
+                      Download Format
+                    </a>
+                  </div>
 
-            {/* Body */}
-            <div className="mb-3">
-              <label className="form-label">Body</label>
-              <textarea
-                className="form-control"
-                name="body"
-                rows={6}
-                value={formData.body}
-                onChange={handleChange}
-                placeholder="Write your email content..."
-              ></textarea>
-            </div>
 
             <div className="modal-footer">
               <button type="button" className="btn btn-secondary" onClick={() => setModalEmailOpen(false)}>
@@ -407,105 +318,34 @@ export default function MailingLists() {
             </div>
           </form>
         </Modal>
-        <Modal isOpen={isModalCommentOpen} onClose={() => setModalCommentOpen(false)} title="Send Email">
-          <form onSubmit={handleSubmit}>
-            {/* Sender Email */}
-            <div className="mb-3">
-              <label className="form-label">Senders Emails</label>
-              <select
-                className="form-select"
-                name="senderEmail"
-                value={formData.senderEmail}
-                onChange={handleChange}
-                required
-              >
-                <option value="">Select Senders Email</option>
-                <option value="noreply@marketsai.com">noreply@marketsai.com</option>
-                <option value="support@marketsai.com">support@marketsai.com</option>
-              </select>
-            </div>
+        <Modal
+        isOpen={isModalCommentOpen}
+        onClose={() => setModalCommentOpen(false)}
+        title="Customer List">
 
-            {/* Send To Options */}
-            <div className="mb-3">
-              <label className="form-label">Send to</label>
-              <div className="d-flex flex-wrap gap-3">
-                {[
-                  "Mailing List",
-                  "Customer Type",
-                  "Individual",
-                  "Email",
-                  "Experience",
-                  "Traded",
-                  "Prospects",
-                ].map((option) => (
-                  <div key={option} className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="radio"
-                      name="sendTo"
-                      value={option}
-                      checked={formData.sendTo === option}
-                      onChange={handleChange}
-                      required
-                    />
-                    <label className="form-check-label">{option}</label>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Prospects */}
-            <div className="mb-3">
-              <label className="form-label">Prospects</label>
-              <select
-                className="form-select"
-                name="prospects"
-                value={formData.prospects}
-                onChange={handleChange}
-              >
-                <option value="">Select an Option</option>
-                <option value="prospect1">Prospect 1</option>
-                <option value="prospect2">Prospect 2</option>
-              </select>
-            </div>
-
-            {/* Subject */}
-            <div className="mb-3">
-              <label className="form-label">Subject</label>
-              <input
-                type="text"
-                className="form-control"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                placeholder="Enter subject"
-                required
-              />
-            </div>
-
-            {/* Body */}
-            <div className="mb-3">
-              <label className="form-label">Body</label>
-              <textarea
-                className="form-control"
-                name="body"
-                rows={6}
-                value={formData.body}
-                onChange={handleChange}
-                placeholder="Write your email content..."
-              ></textarea>
-            </div>
-
-            <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" onClick={() => setModalEmailOpen(false)}>
-                Close
-              </button>
-              <button type="submit" className="btn btn-warning">
-                Send Email
-              </button>
-            </div>
-          </form>
-        </Modal>
+        <div className="row g-3">
+          <div> 
+            <table className="table table-bordered text-center">
+                  <thead className="table-light">
+                    <tr>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Email</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {customers.map((cust, index) => (
+                      <tr key={index}>
+                        <td>{cust.firstName}</td>
+                        <td>{cust.lastName}</td>
+                        <td>{cust.email}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+          </div>
+        </div>
+      </Modal>
       </main>
     </>
   )
