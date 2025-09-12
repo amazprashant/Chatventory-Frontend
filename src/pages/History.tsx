@@ -56,7 +56,7 @@ export default function History() {
         <div className="row mb-3 align-items-center">
           <div className="col-lg-6 col-md-6 col-sm-12">
             <div className="pagetitle">
-              <h1>Manage Roles</h1>
+              <h1>History</h1>
               <Breadcrumb />
             </div>
           </div>
@@ -71,7 +71,7 @@ export default function History() {
               <div className="row mt-3 align-items-center">
                 {/* Left Side */}
                 <div className="col-md-4">
-                  <h4>Templates</h4>
+                  <h4>History</h4>
                 </div>
 
                 {/* Right Side */}
@@ -124,10 +124,12 @@ export default function History() {
                     <thead>
                       <tr>
                         <th>S.No.</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Email</th>
-                        <th>Comment</th>
+                        <th>Recipent Name</th>
+                        <th>Type</th>
+                        <th>Email Template</th>
+                        <th>Sender Email</th>
+                        <th>Mailing List</th>
+                        <th>Send Date</th>
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -137,9 +139,9 @@ export default function History() {
                         <td>Client A</td>
                         <td>Client</td>
                         <td>abc@gmail.com</td>
-                        <td>
-                          <a href='#' className='icon icon-sm icon-warning' onClick={() => setModalCommentOpen(true)} title='View'><i className='bi bi-eye-fill'></i></a>
-                        </td>
+                        <td>abc@gmail.com</td>
+                        <td>abc@gmail.com</td>
+                        <td>abc@gmail.com</td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                           <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
@@ -150,9 +152,9 @@ export default function History() {
                         <td>Client A</td>
                         <td>Client</td>
                         <td>abc@gmail.com</td>
-                        <td>
-                          <a href='#' className='icon icon-sm icon-warning' onClick={() => setModalCommentOpen(true)} title='View'><i className='bi bi-eye-fill'></i></a>
-                        </td>
+                        <td>abc@gmail.com</td>
+                        <td>abc@gmail.com</td>
+                        <td>abc@gmail.com</td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                           <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
@@ -163,9 +165,9 @@ export default function History() {
                         <td>Client A</td>
                         <td>Client</td>
                         <td>abc@gmail.com</td>
-                        <td>
-                          <a href='#' className='icon icon-sm icon-warning' onClick={() => setModalCommentOpen(true)} title='View'><i className='bi bi-eye-fill'></i></a>
-                        </td>
+                        <td>abc@gmail.com</td>
+                        <td>abc@gmail.com</td>
+                        <td>abc@gmail.com</td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                           <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
@@ -176,9 +178,9 @@ export default function History() {
                         <td>Client A</td>
                         <td>Client</td>
                         <td>abc@gmail.com</td>
-                        <td>
-                          <a href='#' className='icon icon-sm icon-warning' onClick={() => setModalCommentOpen(true)} title='View'><i className='bi bi-eye-fill'></i></a>
-                        </td>
+                        <td>abc@gmail.com</td>
+                        <td>abc@gmail.com</td>
+                        <td>abc@gmail.com</td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                           <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
@@ -189,9 +191,9 @@ export default function History() {
                         <td>Client A</td>
                         <td>Client</td>
                         <td>abc@gmail.com</td>
-                        <td>
-                          <a href='#' className='icon icon-sm icon-warning' onClick={() => setModalCommentOpen(true)} title='View'><i className='bi bi-eye-fill'></i></a>
-                        </td>
+                        <td>abc@gmail.com</td>
+                        <td>abc@gmail.com</td>
+                        <td>abc@gmail.com</td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                           <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>

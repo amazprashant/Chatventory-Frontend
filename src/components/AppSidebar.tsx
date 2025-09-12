@@ -1,108 +1,169 @@
+import { NavLink, useLocation } from "react-router-dom";
 
 export default function AppSidebar() {
-    return (
-        <aside id="sidebar" className="sidebar">
+  const location = useLocation();
 
-    <ul className="sidebar-nav" id="sidebar-nav">
+  // Only check email-related routes
+  const isEmailMenuActive = [
+    "/sender-email",
+    "/templates",
+    "/mailing-lists",
+    "/history",
+  ].some((path) => location.pathname.startsWith(path));
 
+  return (
+    <aside id="sidebar" className="sidebar">
+      <ul className="sidebar-nav" id="sidebar-nav">
         <li className="nav-heading">Main</li>
 
         <li className="nav-item">
-            <a className="nav-link" href="/dashboard">
-                <i className="bi bi-graph-up"></i>
-                <span>Dashboard</span>
-            </a>
+          <NavLink
+            to="/dashboard"
+            className={({ isActive }) => `nav-link ${isActive ? "active" : "collapsed"}`}
+          >
+            <i className="bi bi-graph-up"></i>
+            <span>Dashboard</span>
+          </NavLink>
         </li>
 
         <li className="nav-item">
-            <a className="nav-link collapsed" href="/manage-clients">
-                <i className="bi bi-people-fill"></i>
-                <span>Roles</span>
-            </a>
+          <NavLink
+            to="/manage-clients"
+            className={({ isActive }) => `nav-link ${isActive ? "active" : "collapsed"}`}
+          >
+            <i className="bi bi-people-fill"></i>
+            <span>Roles</span>
+          </NavLink>
         </li>
 
         <li className="nav-item">
-            <a className="nav-link collapsed" href="/manage-users">
-                <i className="bi bi-person-lines-fill"></i>
-                <span>Users</span>
-            </a>
+          <NavLink
+            to="/manage-users"
+            className={({ isActive }) => `nav-link ${isActive ? "active" : "collapsed"}`}
+          >
+            <i className="bi bi-person-lines-fill"></i>
+            <span>Users</span>
+          </NavLink>
         </li>
 
         <li className="nav-item">
-            <a className="nav-link collapsed" href="/manage-customers">
-                <i className="bi bi-journal-check"></i>
-                <span>Customers</span>
-            </a>
+          <NavLink
+            to="/manage-customers"
+            className={({ isActive }) => `nav-link ${isActive ? "active" : "collapsed"}`}
+          >
+            <i className="bi bi-journal-check"></i>
+            <span>Customers</span>
+          </NavLink>
         </li>
 
         <li className="nav-item">
-            <a className="nav-link collapsed" href="/prospects">
-                <i className="bi bi-file-earmark-bar-graph"></i>
-                <span>Prospects</span>
-            </a>
+          <NavLink
+            to="/prospects"
+            className={({ isActive }) => `nav-link ${isActive ? "active" : "collapsed"}`}
+          >
+            <i className="bi bi-file-earmark-bar-graph"></i>
+            <span>Prospects</span>
+          </NavLink>
         </li>
 
+        {/* Emails Dropdown */}
         <li className="nav-item">
-            <a className="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-                <i className="bi bi-ui-checks-grid"></i><span>Emails</span><i className="bi bi-chevron-down ms-auto"></i>
-            </a>
-            <ul id="charts-nav" className="nav-content collapse" data-bs-parent="#sidebar-nav">
-                <li>
-                    <a href="sender-email">
-                        <i className="bi bi-dot"></i><span>Sender Emails</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="templates">
-                        <i className="bi bi-dot"></i><span>Templates</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="mailing-lists">
-                        <i className="bi bi-dot"></i><span>Mailing Lists</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="history">
-                        <i className="bi bi-dot"></i><span>History</span>
-                    </a>
-                </li>
-            </ul>
+          <a
+            className={`nav-link ${isEmailMenuActive ? "" : "collapsed"}`}
+            data-bs-target="#emails-nav"
+            data-bs-toggle="collapse"
+            href="#"
+          >
+            <i className="bi bi-ui-checks-grid"></i>
+            <span>Emails</span>
+            <i className="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul
+            id="emails-nav"
+            className={`nav-content collapse ${isEmailMenuActive ? "show" : ""}`}
+            data-bs-parent="#sidebar-nav"
+          >
+            <li>
+              <NavLink
+                to="/sender-email"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                <i className="bi bi-dot"></i>
+                <span>Sender Emails</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/templates"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                <i className="bi bi-dot"></i>
+                <span>Templates</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/mailing-lists"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                <i className="bi bi-dot"></i>
+                <span>Mailing Lists</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/history"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                <i className="bi bi-dot"></i>
+                <span>History</span>
+              </NavLink>
+            </li>
+          </ul>
         </li>
 
         <li className="nav-heading">Settings</li>
 
         <li className="nav-item">
-            <a className="nav-link collapsed" href="/edit-profile">
-                <i className="bi bi-gear-fill"></i>
-                <span>Edit Profile</span>
-            </a>
+          <NavLink
+            to="/edit-profile"
+            className={({ isActive }) => `nav-link ${isActive ? "active" : "collapsed"}`}
+          >
+            <i className="bi bi-gear-fill"></i>
+            <span>Edit Profile</span>
+          </NavLink>
         </li>
 
         <li className="nav-item">
-            <a className="nav-link collapsed" href="/edit-profile#change-password">
-                <i className="bi bi-lock-fill"></i>
-                <span>Change Password</span>
-            </a>
+          <NavLink
+            to="/edit-profile#change-password"
+            className={({ isActive }) => `nav-link ${isActive ? "active" : "collapsed"}`}
+          >
+            <i className="bi bi-lock-fill"></i>
+            <span>Change Password</span>
+          </NavLink>
         </li>
 
         <li className="nav-item">
-            <a className="nav-link collapsed" href="error-404.php">
-                <i className="bi bi-bug-fill"></i>
-                <span>Error Page</span>
-            </a>
+          <NavLink
+            to="/error-404"
+            className={({ isActive }) => `nav-link ${isActive ? "active" : "collapsed"}`}
+          >
+            <i className="bi bi-bug-fill"></i>
+            <span>Error Page</span>
+          </NavLink>
         </li>
 
         <li className="nav-item">
-            <a className="nav-link collapsed" href="contact">
-                <i className="bi bi-chat-dots-fill"></i>
-                <span>Contact Us</span>
-            </a>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => `nav-link ${isActive ? "active" : "collapsed"}`}
+          >
+            <i className="bi bi-chat-dots-fill"></i>
+            <span>Contact Us</span>
+          </NavLink>
         </li>
-
-    </ul>
-
-</aside>
-    )
+      </ul>
+    </aside>
+  );
 }
-

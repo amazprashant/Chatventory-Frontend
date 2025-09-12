@@ -57,7 +57,7 @@ export default function SenderEmails() {
         <div className="row mb-3 align-items-center">
           <div className="col-lg-6 col-md-6 col-sm-12">
             <div className="pagetitle">
-              <h1>Manage Roles</h1>
+              <h1>Sender Emails</h1>
               <Breadcrumb />
             </div>
           </div>
@@ -77,7 +77,7 @@ export default function SenderEmails() {
 
               {/* Left Side */}
               <div className="col-md-6">
-                <h4>Mailing Lists</h4>
+                <h4>Sender Emails</h4>
               </div>
 
               {/* Right Side */}
@@ -102,10 +102,8 @@ export default function SenderEmails() {
                     <thead>
                       <tr>
                         <th>S.No.</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Email</th>
-                        <th>Comment</th>
+                        <th>Template Name</th>
+                        <th>Subject</th>
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -114,10 +112,6 @@ export default function SenderEmails() {
                         <td>#001</td>
                         <td>Client A</td>
                         <td>Client</td>
-                        <td>abc@gmail.com</td>
-                        <td>
-                          <a href='#' className='icon icon-sm icon-warning' onClick={() => setModalCommentOpen(true)} title='View'><i className='bi bi-eye-fill'></i></a>
-                        </td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                           <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
@@ -127,10 +121,6 @@ export default function SenderEmails() {
                         <td>#001</td>
                         <td>Client A</td>
                         <td>Client</td>
-                        <td>abc@gmail.com</td>
-                        <td>
-                          <a href='#' className='icon icon-sm icon-warning' onClick={() => setModalCommentOpen(true)} title='View'><i className='bi bi-eye-fill'></i></a>
-                        </td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                           <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
@@ -140,10 +130,6 @@ export default function SenderEmails() {
                         <td>#001</td>
                         <td>Client A</td>
                         <td>Client</td>
-                        <td>abc@gmail.com</td>
-                        <td>
-                          <a href='#' className='icon icon-sm icon-warning' onClick={() => setModalCommentOpen(true)} title='View'><i className='bi bi-eye-fill'></i></a>
-                        </td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                           <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
@@ -153,10 +139,6 @@ export default function SenderEmails() {
                         <td>#001</td>
                         <td>Client A</td>
                         <td>Client</td>
-                        <td>abc@gmail.com</td>
-                        <td>
-                          <a href='#' className='icon icon-sm icon-warning' onClick={() => setModalCommentOpen(true)} title='View'><i className='bi bi-eye-fill'></i></a>
-                        </td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                           <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
@@ -166,10 +148,6 @@ export default function SenderEmails() {
                         <td>#001</td>
                         <td>Client A</td>
                         <td>Client</td>
-                        <td>abc@gmail.com</td>
-                        <td>
-                          <a href='#' className='icon icon-sm icon-warning' onClick={() => setModalCommentOpen(true)} title='View'><i className='bi bi-eye-fill'></i></a>
-                        </td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                           <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>

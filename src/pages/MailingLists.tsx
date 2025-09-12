@@ -6,12 +6,12 @@ import Modal from "../components/RolesModal";
 
 export default function MailingLists() {
   const [roleName, setRoleName] = useState("");
-    const [isModalOpen, setModalOpen] = useState(false);
-    const [isModalCommentOpen, setModalCommentOpen] = useState(false);
-    const [isModalImportOpen, setModalImportOpen] = useState(false);
-    const [isModalEmailOpen, setModalEmailOpen] = useState(false);
-    const [isModalUploadOpen, setModalUploadOpen] = useState(false);
-    const [isModalAddMailingOpen, setModalAddMailingOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [isModalCommentOpen, setModalCommentOpen] = useState(false);
+  const [isModalImportOpen, setModalImportOpen] = useState(false);
+  const [isModalEmailOpen, setModalEmailOpen] = useState(false);
+  const [isModalUploadOpen, setModalUploadOpen] = useState(false);
+  const [isModalAddMailingOpen, setModalAddMailingOpen] = useState(false);
   const [permissions, setPermissions] = useState<{ [key: string]: string }>({
     dashboard: "na",
     roles: "na",
@@ -33,20 +33,20 @@ export default function MailingLists() {
     alert("Role Added Successfully!");
   };
   // Email form state
-      const [formData, setFormData] = useState({
-        senderEmail: "",
-        sendTo: "",
-        prospects: "",
-        subject: "",
-        body: "",
-      });
-    
-      const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
-      ) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-      };
+  const [formData, setFormData] = useState({
+    senderEmail: "",
+    sendTo: "",
+    prospects: "",
+    subject: "",
+    body: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
   return (
     <>
       <AppHeader />
@@ -72,22 +72,22 @@ export default function MailingLists() {
           <div className="card-body">
             <div className="row">
               <div className="row mt-3">
-              {/* Left Side */}
-              <div className="col-md-6">
-                <h4>Mailing Lists</h4>
-              </div>
-
-              {/* Right Side */}
-              <div className="col-md-6">
-                <div className="d-flex gap-3 justify-content-end align-items-end flex-wrap">
-                   <button
-                    className="btn btn-warning d-flex align-items-center"
-                    onClick={() => setModalUploadOpen(true)}>Upload</button>
-                  <button
-                    className="btn btn-warning d-flex align-items-center"
-                    onClick={() => setModalAddMailingOpen(true)}>Add Mailing List</button>
+                {/* Left Side */}
+                <div className="col-md-6">
+                  <h4>Mailing Lists</h4>
                 </div>
-              </div>
+
+                {/* Right Side */}
+                <div className="col-md-6">
+                  <div className="d-flex gap-3 justify-content-end align-items-end flex-wrap">
+                    <button
+                      className="btn btn-warning d-flex align-items-center"
+                      onClick={() => setModalUploadOpen(true)}>Upload</button>
+                    <button
+                      className="btn btn-warning d-flex align-items-center"
+                      onClick={() => setModalAddMailingOpen(true)}>Add Mailing List</button>
+                  </div>
+                </div>
               </div>
               <div className="col-md-12">
                 <div className="content px-0">
@@ -95,10 +95,9 @@ export default function MailingLists() {
                     <thead>
                       <tr>
                         <th>S.No.</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Email</th>
-                        <th>Comment</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Customer List</th>
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -107,9 +106,16 @@ export default function MailingLists() {
                         <td>#001</td>
                         <td>Client A</td>
                         <td>Client</td>
-                        <td>abc@gmail.com</td>
                         <td>
-                          <a href='#' className='icon icon-sm icon-warning' onClick={() => setModalCommentOpen(true)} title='View'><i className='bi bi-eye-fill'></i></a>
+                          <button
+                            type="button"
+                            className="btn btn-link p-0 icon icon-sm icon-warning"
+                            onClick={() => setModalCommentOpen(true)}
+                            title="View"
+                          >
+                            <i className="bi bi-eye-fill"></i>
+                          </button>
+
                         </td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
@@ -120,9 +126,16 @@ export default function MailingLists() {
                         <td>#001</td>
                         <td>Client A</td>
                         <td>Client</td>
-                        <td>abc@gmail.com</td>
                         <td>
-                          <a href='#' className='icon icon-sm icon-warning' onClick={() => setModalCommentOpen(true)} title='View'><i className='bi bi-eye-fill'></i></a>
+                          <button
+                            type="button"
+                            className="btn btn-link p-0 icon icon-sm icon-warning"
+                            onClick={() => setModalCommentOpen(true)}
+                            title="View"
+                          >
+                            <i className="bi bi-eye-fill"></i>
+                          </button>
+
                         </td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
@@ -133,9 +146,16 @@ export default function MailingLists() {
                         <td>#001</td>
                         <td>Client A</td>
                         <td>Client</td>
-                        <td>abc@gmail.com</td>
                         <td>
-                          <a href='#' className='icon icon-sm icon-warning' onClick={() => setModalCommentOpen(true)} title='View'><i className='bi bi-eye-fill'></i></a>
+                          <button
+                            type="button"
+                            className="btn btn-link p-0 icon icon-sm icon-warning"
+                            onClick={() => setModalCommentOpen(true)}
+                            title="View"
+                          >
+                            <i className="bi bi-eye-fill"></i>
+                          </button>
+
                         </td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
@@ -146,9 +166,16 @@ export default function MailingLists() {
                         <td>#001</td>
                         <td>Client A</td>
                         <td>Client</td>
-                        <td>abc@gmail.com</td>
                         <td>
-                          <a href='#' className='icon icon-sm icon-warning' onClick={() => setModalCommentOpen(true)} title='View'><i className='bi bi-eye-fill'></i></a>
+                          <button
+                            type="button"
+                            className="btn btn-link p-0 icon icon-sm icon-warning"
+                            onClick={() => setModalCommentOpen(true)}
+                            title="View"
+                          >
+                            <i className="bi bi-eye-fill"></i>
+                          </button>
+
                         </td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
@@ -159,9 +186,16 @@ export default function MailingLists() {
                         <td>#001</td>
                         <td>Client A</td>
                         <td>Client</td>
-                        <td>abc@gmail.com</td>
                         <td>
-                          <a href='#' className='icon icon-sm icon-warning' onClick={() => setModalCommentOpen(true)} title='View'><i className='bi bi-eye-fill'></i></a>
+                          <button
+                            type="button"
+                            className="btn btn-link p-0 icon icon-sm icon-warning"
+                            onClick={() => setModalCommentOpen(true)}
+                            title="View"
+                          >
+                            <i className="bi bi-eye-fill"></i>
+                          </button>
+
                         </td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
@@ -175,7 +209,7 @@ export default function MailingLists() {
             </div>
           </div>
         </div>
-       <Modal isOpen={isModalAddMailingOpen} onClose={() => setModalAddMailingOpen(false)} title="Send Email">
+        <Modal isOpen={isModalAddMailingOpen} onClose={() => setModalAddMailingOpen(false)} title="Send Email">
           <form onSubmit={handleSubmit}>
             {/* Sender Email */}
             <div className="mb-3">
@@ -373,7 +407,105 @@ export default function MailingLists() {
             </div>
           </form>
         </Modal>
-        
+        <Modal isOpen={isModalCommentOpen} onClose={() => setModalCommentOpen(false)} title="Send Email">
+          <form onSubmit={handleSubmit}>
+            {/* Sender Email */}
+            <div className="mb-3">
+              <label className="form-label">Senders Emails</label>
+              <select
+                className="form-select"
+                name="senderEmail"
+                value={formData.senderEmail}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Select Senders Email</option>
+                <option value="noreply@marketsai.com">noreply@marketsai.com</option>
+                <option value="support@marketsai.com">support@marketsai.com</option>
+              </select>
+            </div>
+
+            {/* Send To Options */}
+            <div className="mb-3">
+              <label className="form-label">Send to</label>
+              <div className="d-flex flex-wrap gap-3">
+                {[
+                  "Mailing List",
+                  "Customer Type",
+                  "Individual",
+                  "Email",
+                  "Experience",
+                  "Traded",
+                  "Prospects",
+                ].map((option) => (
+                  <div key={option} className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="sendTo"
+                      value={option}
+                      checked={formData.sendTo === option}
+                      onChange={handleChange}
+                      required
+                    />
+                    <label className="form-check-label">{option}</label>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Prospects */}
+            <div className="mb-3">
+              <label className="form-label">Prospects</label>
+              <select
+                className="form-select"
+                name="prospects"
+                value={formData.prospects}
+                onChange={handleChange}
+              >
+                <option value="">Select an Option</option>
+                <option value="prospect1">Prospect 1</option>
+                <option value="prospect2">Prospect 2</option>
+              </select>
+            </div>
+
+            {/* Subject */}
+            <div className="mb-3">
+              <label className="form-label">Subject</label>
+              <input
+                type="text"
+                className="form-control"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                placeholder="Enter subject"
+                required
+              />
+            </div>
+
+            {/* Body */}
+            <div className="mb-3">
+              <label className="form-label">Body</label>
+              <textarea
+                className="form-control"
+                name="body"
+                rows={6}
+                value={formData.body}
+                onChange={handleChange}
+                placeholder="Write your email content..."
+              ></textarea>
+            </div>
+
+            <div className="modal-footer">
+              <button type="button" className="btn btn-secondary" onClick={() => setModalEmailOpen(false)}>
+                Close
+              </button>
+              <button type="submit" className="btn btn-warning">
+                Send Email
+              </button>
+            </div>
+          </form>
+        </Modal>
       </main>
     </>
   )
