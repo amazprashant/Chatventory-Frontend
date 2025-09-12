@@ -6,13 +6,13 @@ import Modal from "../components/RolesModal";
 
 export default function SenderEmails() {
   const [roleName, setRoleName] = useState("");
-    const [isModalOpen, setModalOpen] = useState(false);
-    const [isModalCommentOpen, setModalCommentOpen] = useState(false);
-    const [isModalImportOpen, setModalImportOpen] = useState(false);
-    const [isModalEmailOpen, setModalEmailOpen] = useState(false);
-    const [isModalAddTemplateOpen, setModalAddTemplateOpen] = useState(false);
-    const [isModalUploadOpen, setModalUploadOpen] = useState(false);
-    const [isModalAddMailingOpen, setModalAddMailingOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [isModalCommentOpen, setModalCommentOpen] = useState(false);
+  const [isModalImportOpen, setModalImportOpen] = useState(false);
+  const [isModalEmailOpen, setModalEmailOpen] = useState(false);
+  const [isModalAddTemplateOpen, setModalAddTemplateOpen] = useState(false);
+  const [isModalUploadOpen, setModalUploadOpen] = useState(false);
+  const [isModalAddMailingOpen, setModalAddMailingOpen] = useState(false);
   const [permissions, setPermissions] = useState<{ [key: string]: string }>({
     dashboard: "na",
     roles: "na",
@@ -34,21 +34,21 @@ export default function SenderEmails() {
     alert("Role Added Successfully!");
   };
   // Email form state
-    const [formData, setFormData] = useState({
-      senderEmail: "",
-      sendTo: "",
-      prospects: "",
-      subject: "",
-      body: "",
-    });
-  
-    const handleChange = (
-      e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
-    ) => {
-      const { name, value } = e.target;
-      setFormData({ ...formData, [name]: value });
-    };
-  
+  const [formData, setFormData] = useState({
+    senderEmail: "",
+    sendTo: "",
+    prospects: "",
+    subject: "",
+    body: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
   return (
     <>
       <AppHeader />
@@ -73,17 +73,29 @@ export default function SenderEmails() {
         <div className="card recent-sales overflow-auto">
           <div className="card-body">
             <div className="row">
-              <h4>Mailing Lists</h4>
-                  <div>
-                    <button
-                        className="btn btn-warning d-flex align-items-center"
-                        onClick={() => setModalEmailOpen(true)}> Send Emails
-                      </button>
-                      <button
-                        className="btn btn-warning d-flex align-items-center"
-                        onClick={() => setModalAddTemplateOpen(true)}> Add Templates
-                      </button>
-                  </div>
+            <div className="row mt-3">
+
+              {/* Left Side */}
+              <div className="col-md-6">
+                <h4>Mailing Lists</h4>
+              </div>
+
+              {/* Right Side */}
+              <div className="col-md-6">
+                <div className="d-flex gap-3 justify-content-end align-items-end flex-wrap">
+                  <button
+                    className="btn btn-warning d-flex align-items-center"
+                    onClick={() => setModalEmailOpen(true)}>
+                    Send Emails
+                  </button>
+                  <button
+                    className="btn btn-warning d-flex align-items-center"
+                    onClick={() => setModalAddTemplateOpen(true)}>
+                    Add Templates
+                  </button>
+                </div>
+              </div>
+              </div>
               <div className="col-md-12">
                 <div className="content px-0">
                   <table id="example" className="table nowrap table-bordered table-striped" >
@@ -170,7 +182,7 @@ export default function SenderEmails() {
             </div>
           </div>
         </div>
-       <Modal isOpen={isModalEmailOpen} onClose={() => setModalEmailOpen(false)} title="Send Email">
+        <Modal isOpen={isModalEmailOpen} onClose={() => setModalEmailOpen(false)} title="Send Email">
           <form onSubmit={handleSubmit}>
             {/* Sender Email */}
             <div className="mb-3">

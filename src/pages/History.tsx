@@ -33,20 +33,21 @@ export default function History() {
     alert("Role Added Successfully!");
   };
   // Email form state
-        const [formData, setFormData] = useState({
-          senderEmail: "",
-          sendTo: "",
-          prospects: "",
-          subject: "",
-          body: "",
-        });
-      
-        const handleChange = (
-          e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
-        ) => {
-          const { name, value } = e.target;
-          setFormData({ ...formData, [name]: value });
-        };
+  const [formData, setFormData] = useState({
+    senderEmail: "",
+    sendTo: "",
+    prospects: "",
+    subject: "",
+    body: "",
+    templateType: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
   return (
     <>
       <AppHeader />
@@ -60,38 +61,63 @@ export default function History() {
             </div>
           </div>
           <div className="col-lg-6 col-md-6 col-sm-12 text-end">
-            <button
-              className="btn btn-secondary"
-              onClick={() => setModalOpen(true)}
-            > Add Roles
-            </button>
+
           </div>
         </div>
 
         <div className="card recent-sales overflow-auto">
           <div className="card-body">
             <div className="row">
-              <select
-                className="form-select"
-                name="senderEmail"
-                value={formData.senderEmail}
-                onChange={handleChange}
-                required>
-                <option value="">Select Senders Email</option>
-                <option value="noreply@marketsai.com">noreply@marketsai.com</option>
-                <option value="support@marketsai.com">support@marketsai.com</option>
-              </select>
-              <select
-                className="form-select"
-                name="senderEmail"
-                value={formData.senderEmail}
-                onChange={handleChange}
-                required
-              >
-                <option value="">Select Senders Email</option>
-                <option value="noreply@marketsai.com">noreply@marketsai.com</option>
-                <option value="support@marketsai.com">support@marketsai.com</option>
-              </select>
+              <div className="row mt-3 align-items-center">
+                {/* Left Side */}
+                <div className="col-md-4">
+                  <h4>Templates</h4>
+                </div>
+
+                {/* Right Side */}
+                <div className="col-md-6">
+                  <div className="d-flex gap-3 text-end">
+                    {/* Sender Email Dropdown */}
+                    <select
+                      className="form-select"
+                      name="senderEmail"
+                      value={formData.senderEmail}
+                      onChange={handleChange}
+                      required
+                    >
+                      <option value="">Select Sender Email</option>
+                      <option value="noreply@marketsai.com">noreply@marketsai.com</option>
+                      <option value="support@marketsai.com">support@marketsai.com</option>
+                    </select>
+
+                    {/* Template Type Dropdown */}
+                    <select
+                      className="form-select"
+                      name="templateType"
+                      value={formData.templateType}
+                      onChange={handleChange}
+                      required
+                    >
+                      <option value="">Select Template Type</option>
+                      <option value="marketing">Marketing</option>
+                      <option value="transactional">Transactional</option>
+                      <option value="custom">Custom</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* Button */}
+                <div className="col-md-2 text-end">
+                  <button
+                    className="btn btn-warning"
+                    onClick={() => setModalOpen(true)}
+                  >
+                    Clear Filter
+                  </button>
+                </div>
+              </div>
+
+
               <div className="col-md-12">
                 <div className="content px-0">
                   <table id="example" className="table nowrap table-bordered table-striped" >

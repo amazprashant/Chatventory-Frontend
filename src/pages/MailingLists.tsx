@@ -71,14 +71,24 @@ export default function MailingLists() {
         <div className="card recent-sales overflow-auto">
           <div className="card-body">
             <div className="row">
-              <div>
-                  <button
+              <div className="row mt-3">
+              {/* Left Side */}
+              <div className="col-md-6">
+                <h4>Mailing Lists</h4>
+              </div>
+
+              {/* Right Side */}
+              <div className="col-md-6">
+                <div className="d-flex gap-3 justify-content-end align-items-end flex-wrap">
+                   <button
                     className="btn btn-warning d-flex align-items-center"
                     onClick={() => setModalUploadOpen(true)}>Upload</button>
                   <button
                     className="btn btn-warning d-flex align-items-center"
                     onClick={() => setModalAddMailingOpen(true)}>Add Mailing List</button>
                 </div>
+              </div>
+              </div>
               <div className="col-md-12">
                 <div className="content px-0">
                   <table id="example" className="table nowrap table-bordered table-striped" >
