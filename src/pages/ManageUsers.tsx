@@ -74,16 +74,13 @@ export default function ManageUsers() {
                 </label>
                   <select className="form-select" name="role" value={formData.role} onChange={handleChange} required>
                   <option value="">Select Status</option>
-                  <option value="Admin">Admin</option>
-                  <option value="Manager">Manager</option>
-                  <option value="User">User</option>
+                  <option value="0">Active</option>
+                  <option value="1">Inactive</option>
                 </select>
               </div>
               <button
                   className="btn btn-warning d-flex align-items-center"
-                  onClick={() => setModalOpen(true)}
-                >
-                  <i className="bi bi-plus-circle me-1"></i> Clear Filter
+                > Clear Filter
                 </button>
                 
               {/* Add User button */}
