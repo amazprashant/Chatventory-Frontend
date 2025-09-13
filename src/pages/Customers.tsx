@@ -50,7 +50,6 @@ export default function Customers() {
                 </label>
                 <select className="form-select" name="role" required>
                   <option value="">Select Experience</option>
-                  <option value="">Select Experience</option>
                   <option value="Twitter Trade Sentiment" >Twitter Trade Sentiment</option>
                   <option value="AI Stock News Analysis" >AI Stock News Analysis</option>
                   <option value="AI Analysts Predictions" >AI Analysts Predictions </option>
@@ -219,8 +218,8 @@ export default function Customers() {
             <div>
               <label className="form-label">Subscription</label>
               <select className="form-control">
-                <option>Basic</option>
-                <option>Premium</option>
+                <option value="basic">Basic</option>
+                <option value="professional">Professional</option>
               </select>
             </div>
 
@@ -228,17 +227,27 @@ export default function Customers() {
               <label className="form-label">Experience</label>
               <select className="form-control">
                 <option>Select an Option</option>
-                <option>Beginner</option>
-                <option>Expert</option>
+                <option value="Twitter Trade Sentiment" >Twitter Trade Sentiment</option>
+                  <option value="AI Stock News Analysis" >AI Stock News Analysis</option>
+                  <option value="AI Analysts Predictions" >AI Analysts Predictions </option>
+                  <option value="AI Earnings Estimates" >AI Earnings Estimates</option>
+                  <option value="Community Top Ten Stock Picks" >Community Top Ten Stock Picks</option>
+                  <option value="Market Movers">Market Movers</option>
+                  <option value="Chatbot Stock Assistant">Chatbot Stock Assistant</option>
+                  <option value="Charts and Data">Charts and Data</option>
               </select>
             </div>
 
             <div>
               <label className="form-label">Traded</label>
-              <select className="form-control">
-                <option>Select an Option</option>
-                <option>Yes</option>
-                <option>No</option>
+              <select className="form-control"> 
+                <option value="">Select Traded</option>
+                  <option value="Stocks">Stocks</option>
+                  <option value="ETFs"> ETFs</option>
+                  <option value="Crypto">Crypto </option>
+                  <option value="Fantasy Sports">Fantasy Sports</option>
+                  <option value="Options">Options </option>
+                  <option value="Sports betting" >Sports betting</option>
               </select>
             </div>
 
