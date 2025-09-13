@@ -110,7 +110,6 @@ export default function History() {
                 <div className="col-md-2 text-end">
                   <button
                     className="btn btn-warning"
-                    onClick={() => setModalOpen(true)}
                   >
                     Clear Filter
                   </button>
