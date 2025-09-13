@@ -228,26 +228,26 @@ export default function Customers() {
               <select className="form-control">
                 <option>Select an Option</option>
                 <option value="Twitter Trade Sentiment" >Twitter Trade Sentiment</option>
-                  <option value="AI Stock News Analysis" >AI Stock News Analysis</option>
-                  <option value="AI Analysts Predictions" >AI Analysts Predictions </option>
-                  <option value="AI Earnings Estimates" >AI Earnings Estimates</option>
-                  <option value="Community Top Ten Stock Picks" >Community Top Ten Stock Picks</option>
-                  <option value="Market Movers">Market Movers</option>
-                  <option value="Chatbot Stock Assistant">Chatbot Stock Assistant</option>
-                  <option value="Charts and Data">Charts and Data</option>
+                <option value="AI Stock News Analysis" >AI Stock News Analysis</option>
+                <option value="AI Analysts Predictions" >AI Analysts Predictions </option>
+                <option value="AI Earnings Estimates" >AI Earnings Estimates</option>
+                <option value="Community Top Ten Stock Picks" >Community Top Ten Stock Picks</option>
+                <option value="Market Movers">Market Movers</option>
+                <option value="Chatbot Stock Assistant">Chatbot Stock Assistant</option>
+                <option value="Charts and Data">Charts and Data</option>
               </select>
             </div>
 
             <div>
               <label className="form-label">Traded</label>
-              <select className="form-control"> 
+              <select className="form-control">
                 <option value="">Select Traded</option>
-                  <option value="Stocks">Stocks</option>
-                  <option value="ETFs"> ETFs</option>
-                  <option value="Crypto">Crypto </option>
-                  <option value="Fantasy Sports">Fantasy Sports</option>
-                  <option value="Options">Options </option>
-                  <option value="Sports betting" >Sports betting</option>
+                <option value="Stocks">Stocks</option>
+                <option value="ETFs"> ETFs</option>
+                <option value="Crypto">Crypto </option>
+                <option value="Fantasy Sports">Fantasy Sports</option>
+                <option value="Options">Options </option>
+                <option value="Sports betting" >Sports betting</option>
               </select>
             </div>
 

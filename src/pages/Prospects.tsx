@@ -19,7 +19,7 @@ export default function Prospects() {
           {/* Left side: Title + Breadcrumb */}
           <div className="col-sm-4">
             <div className="pagetitle">
-              <h1>Manage Users</h1>
+              <h1>Prospects</h1>
               <Breadcrumb />
             </div>
           </div>
@@ -153,7 +153,7 @@ export default function Prospects() {
 
           <div>
             <label className="form-label">Comments</label>
-            <input type="textarea" className="form-control" />
+            <textarea className="form-control" />
           </div>
         </div>
       </Modal>
@@ -179,6 +179,11 @@ export default function Prospects() {
           <div> 
             <label className="form-label">Import File</label>
             <input type="file" className="form-control" />
+          </div>
+          <div className="mb-3">
+            <a href="/sample-format.csv" download>
+              Download Format
+            </a>
           </div>
         </div>
       </Modal>
