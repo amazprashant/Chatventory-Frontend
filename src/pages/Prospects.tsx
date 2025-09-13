@@ -153,7 +153,7 @@ export default function Prospects() {
 
           <div>
             <label className="form-label">Comments</label>
-            <textarea className="form-control" />
+            <textarea className="form-control" rows={6}/>
           </div>
         </div>
       </Modal>

@@ -12,7 +12,7 @@ export default function SenderEmails() {
   const [isModalEmailOpen, setModalEmailOpen] = useState(false);
   const [isModalAddTemplateOpen, setModalAddTemplateOpen] = useState(false);
   const [isModalUploadOpen, setModalUploadOpen] = useState(false);
-  const [isModalAddMailingOpen, setModalAddMailingOpen] = useState(false);
+  const [isModalAddSenderEmailOpen, setModalAddSenderEmailOpen] = useState(false);
   const [permissions, setPermissions] = useState<{ [key: string]: string }>({
     dashboard: "na",
     roles: "na",
@@ -64,8 +64,8 @@ export default function SenderEmails() {
           <div className="col-lg-6 col-md-6 col-sm-12 text-end">
             <button
               className="btn btn-secondary"
-              onClick={() => setModalOpen(true)}
-            > Add Roles
+              onClick={() => setModalAddSenderEmailOpen(true)}
+            > Add Sender Email
             </button>
           </div>
         </div>
@@ -73,44 +73,20 @@ export default function SenderEmails() {
         <div className="card recent-sales overflow-auto">
           <div className="card-body">
             <div className="row">
-            <div className="row mt-3">
 
-              {/* Left Side */}
-              <div className="col-md-6">
-                <h4>Sender Emails</h4>
-              </div>
-
-              {/* Right Side */}
-              <div className="col-md-6">
-                <div className="d-flex gap-3 justify-content-end align-items-end flex-wrap">
-                  <button
-                    className="btn btn-warning d-flex align-items-center"
-                    onClick={() => setModalEmailOpen(true)}>
-                    Send Emails
-                  </button>
-                  <button
-                    className="btn btn-warning d-flex align-items-center"
-                    onClick={() => setModalAddTemplateOpen(true)}>
-                    Add Templates
-                  </button>
-                </div>
-              </div>
-              </div>
               <div className="col-md-12">
                 <div className="content px-0">
                   <table id="example" className="table nowrap table-bordered table-striped" >
                     <thead>
                       <tr>
                         <th>S.No.</th>
-                        <th>Template Name</th>
-                        <th>Subject</th>
+                        <th>User</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td>#001</td>
-                        <td>Client A</td>
                         <td>Client</td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
@@ -119,7 +95,6 @@ export default function SenderEmails() {
                       </tr>
                       <tr>
                         <td>#001</td>
-                        <td>Client A</td>
                         <td>Client</td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
@@ -128,7 +103,6 @@ export default function SenderEmails() {
                       </tr>
                       <tr>
                         <td>#001</td>
-                        <td>Client A</td>
                         <td>Client</td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
@@ -137,7 +111,6 @@ export default function SenderEmails() {
                       </tr>
                       <tr>
                         <td>#001</td>
-                        <td>Client A</td>
                         <td>Client</td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
@@ -146,7 +119,6 @@ export default function SenderEmails() {
                       </tr>
                       <tr>
                         <td>#001</td>
-                        <td>Client A</td>
                         <td>Client</td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
@@ -259,27 +231,11 @@ export default function SenderEmails() {
             </div>
           </form>
         </Modal>
-        <Modal isOpen={isModalAddTemplateOpen} onClose={() => setModalAddTemplateOpen(false)} title="Send Email">
+        <Modal isOpen={isModalAddSenderEmailOpen} onClose={() => setModalAddSenderEmailOpen(false)} title="Add Sender Email">
           <form onSubmit={handleSubmit}>
-            {/* Sender Email */}
-            <div className="mb-3">
-              <label className="form-label">Add Templates</label>
-              <select
-                className="form-select"
-                name="senderEmail"
-                value={formData.senderEmail}
-                onChange={handleChange}
-                required
-              >
-                <option value="">Select Senders Email</option>
-                <option value="noreply@marketsai.com">noreply@marketsai.com</option>
-                <option value="support@marketsai.com">support@marketsai.com</option>
-              </select>
-            </div>
-
             {/* Subject */}
             <div className="mb-3">
-              <label className="form-label">Subject</label>
+              <label className="form-label">Email</label>
               <input
                 type="text"
                 className="form-control"
@@ -289,29 +245,7 @@ export default function SenderEmails() {
                 placeholder="Enter subject"
                 required
               />
-            </div>
-
-            {/* Body */}
-            <div className="mb-3">
-              <label className="form-label">Body</label>
-              <textarea
-                className="form-control"
-                name="body"
-                rows={6}
-                value={formData.body}
-                onChange={handleChange}
-                placeholder="Write your email content..."
-              ></textarea>
-            </div>
-
-            <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" onClick={() => setModalEmailOpen(false)}>
-                Close
-              </button>
-              <button type="submit" className="btn btn-warning">
-                Add Template
-              </button>
-            </div>
+            </div>  
           </form>
         </Modal>
       </main>
