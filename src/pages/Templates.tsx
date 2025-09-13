@@ -61,13 +61,6 @@ export default function Templates() {
               <Breadcrumb />
             </div>
           </div>
-          <div className="col-lg-6 col-md-6 col-sm-12 text-end">
-            <button
-              className="btn btn-secondary"
-              onClick={() => setModalOpen(true)}
-            > Add Roles
-            </button>
-          </div>
         </div>
 
         <div className="card recent-sales overflow-auto">
@@ -113,6 +106,8 @@ export default function Templates() {
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                           <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
+                          <a href='#' className='icon icon-sm icon-primary' title='Share' onClick={() => setModalCustomEmailOpen(true)}><i className='bi bi-send'></i></a>
+
                         </td>
                       </tr>
                       <tr>
@@ -123,6 +118,7 @@ export default function Templates() {
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                           <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
+                          <a href='#' className='icon icon-sm icon-primary' title='Share' onClick={() => setModalCustomEmailOpen(true)}><i className='bi bi-send'></i></a>
                         </td>
                       </tr>
                       <tr>
@@ -133,6 +129,7 @@ export default function Templates() {
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                           <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
+                          <a href='#' className='icon icon-sm icon-primary' title='Share' onClick={() => setModalCustomEmailOpen(true)}><i className='bi bi-send'></i></a>
                         </td>
                       </tr>
                       <tr>
@@ -143,6 +140,7 @@ export default function Templates() {
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                           <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
+                          <a href='#' className='icon icon-sm icon-primary' title='Share' onClick={() => setModalCustomEmailOpen(true)}><i className='bi bi-send'></i></a>
                         </td>
                       </tr>
                       <tr>
@@ -153,6 +151,7 @@ export default function Templates() {
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                           <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
+                          <a href='#' className='icon icon-sm icon-primary' title='Share' onClick={() => setModalCustomEmailOpen(true)}><i className='bi bi bi-send'></i></a>
                         </td>
                       </tr>
                     </tbody>
@@ -261,24 +260,21 @@ export default function Templates() {
             </div>
           </form>
         </Modal>
-        <Modal isOpen={isModalAddTemplateOpen} onClose={() => setModalAddTemplateOpen(false)} title="Send Email">
+        <Modal isOpen={isModalAddTemplateOpen} onClose={() => setModalAddTemplateOpen(false)} title="Add Templates">
           <form onSubmit={handleSubmit}>
             {/* Sender Email */}
-            <div className="mb-3">
-              <label className="form-label">Add Templates</label>
-              <select
-                className="form-select"
-                name="senderEmail"
-                value={formData.senderEmail}
+                <div className="mb-3">
+              <label className="form-label">Template Name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="template_name"
+                value={formData.subject}
                 onChange={handleChange}
+                placeholder="Enter template name"
                 required
-              >
-                <option value="">Select Senders Email</option>
-                <option value="noreply@marketsai.com">noreply@marketsai.com</option>
-                <option value="support@marketsai.com">support@marketsai.com</option>
-              </select>
+              />
             </div>
-
             {/* Subject */}
             <div className="mb-3">
               <label className="form-label">Subject</label>
@@ -304,15 +300,6 @@ export default function Templates() {
                 onChange={handleChange}
                 placeholder="Write your email content..."
               ></textarea>
-            </div>
-
-            <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" onClick={() => setModalEmailOpen(false)}>
-                Close
-              </button>
-              <button type="submit" className="btn btn-warning">
-                Add Template
-              </button>
             </div>
           </form>
         </Modal>

@@ -73,7 +73,6 @@ export default function SenderEmails() {
         <div className="card recent-sales overflow-auto">
           <div className="card-body">
             <div className="row">
-
               <div className="col-md-12">
                 <div className="content px-0">
                   <table id="example" className="table nowrap table-bordered table-striped" >
@@ -132,105 +131,6 @@ export default function SenderEmails() {
             </div>
           </div>
         </div>
-        <Modal isOpen={isModalEmailOpen} onClose={() => setModalEmailOpen(false)} title="Send Email">
-          <form onSubmit={handleSubmit}>
-            {/* Sender Email */}
-            <div className="mb-3">
-              <label className="form-label">Senders Emails</label>
-              <select
-                className="form-select"
-                name="senderEmail"
-                value={formData.senderEmail}
-                onChange={handleChange}
-                required
-              >
-                <option value="">Select Senders Email</option>
-                <option value="noreply@marketsai.com">noreply@marketsai.com</option>
-                <option value="support@marketsai.com">support@marketsai.com</option>
-              </select>
-            </div>
-
-            {/* Send To Options */}
-            <div className="mb-3">
-              <label className="form-label">Send to</label>
-              <div className="d-flex flex-wrap gap-3">
-                {[
-                  "Mailing List",
-                  "Customer Type",
-                  "Individual",
-                  "Email",
-                  "Experience",
-                  "Traded",
-                  "Prospects",
-                ].map((option) => (
-                  <div key={option} className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="radio"
-                      name="sendTo"
-                      value={option}
-                      checked={formData.sendTo === option}
-                      onChange={handleChange}
-                      required
-                    />
-                    <label className="form-check-label">{option}</label>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Prospects */}
-            <div className="mb-3">
-              <label className="form-label">Prospects</label>
-              <select
-                className="form-select"
-                name="prospects"
-                value={formData.prospects}
-                onChange={handleChange}
-              >
-                <option value="">Select an Option</option>
-                <option value="prospect1">Prospect 1</option>
-                <option value="prospect2">Prospect 2</option>
-              </select>
-            </div>
-
-            {/* Subject */}
-            <div className="mb-3">
-              <label className="form-label">Subject</label>
-              <input
-                type="text"
-                className="form-control"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                placeholder="Enter subject"
-                required
-              />
-            </div>
-
-            {/* Body */}
-            <div className="mb-3">
-              <label className="form-label">Body</label>
-              <textarea
-                className="form-control"
-                name="body"
-                rows={6}
-                value={formData.body}
-                onChange={handleChange}
-                placeholder="Write your email content..."
-              ></textarea>
-            </div>
-
-            <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" onClick={() => setModalEmailOpen(false)}>
-                Close
-              </button>
-              <button type="submit" className="btn btn-warning">
-                Send Email
-              </button>
-            </div>
-          </form>
-        </Modal>
         <Modal isOpen={isModalAddSenderEmailOpen} onClose={() => setModalAddSenderEmailOpen(false)} title="Add Sender Email">
           <form onSubmit={handleSubmit}>
             {/* Subject */}
@@ -239,11 +139,8 @@ export default function SenderEmails() {
               <input
                 type="text"
                 className="form-control"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                placeholder="Enter subject"
-                required
+                name="email"
+                placeholder="Email"
               />
             </div>  
           </form>
