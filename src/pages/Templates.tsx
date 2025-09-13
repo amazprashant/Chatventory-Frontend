@@ -70,7 +70,7 @@ export default function Templates() {
 
               {/* Left Side */}
               <div className="col-md-6">
-                <h4>Templates</h4>
+                {/* <h4>Templates</h4> */}
               </div>
 
               {/* Right Side */}

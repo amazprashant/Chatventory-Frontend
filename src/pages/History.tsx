@@ -11,7 +11,7 @@ export default function History() {
   const [isModalImportOpen, setModalImportOpen] = useState(false);
   const [isModalEmailOpen, setModalEmailOpen] = useState(false);
   const [isModalUploadOpen, setModalUploadOpen] = useState(false);
-  const [isModalAddMailingOpen, setModalAddMailingOpen] = useState(false);
+  const [isModalAddTemplateOpen, setModalAddTemplateOpen] = useState(false);
   const [permissions, setPermissions] = useState<{ [key: string]: string }>({
     dashboard: "na",
     roles: "na",
@@ -71,7 +71,7 @@ export default function History() {
               <div className="row mt-3 align-items-center">
                 {/* Left Side */}
                 <div className="col-md-4">
-                  <h4>History</h4>
+                  {/* <h4>History</h4> */}
                 </div>
 
                 {/* Right Side */}
@@ -143,8 +143,7 @@ export default function History() {
                         <td>abc@gmail.com</td>
                         <td>abc@gmail.com</td>
                         <td>
-                          <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
-                          <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
+                          <a href='#' className='icon icon-sm icon-primary' title='Send' onClick={() => setModalAddTemplateOpen(true)}><i className='bi bi-send'></i></a>
                         </td>
                       </tr>
                       <tr>
@@ -156,8 +155,7 @@ export default function History() {
                         <td>abc@gmail.com</td>
                         <td>abc@gmail.com</td>
                         <td>
-                          <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
-                          <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
+                          <a href='#' className='icon icon-sm icon-primary' title='Send' onClick={() => setModalAddTemplateOpen(true)}><i className='bi bi-send'></i></a>
                         </td>
                       </tr>
                       <tr>
@@ -169,8 +167,7 @@ export default function History() {
                         <td>abc@gmail.com</td>
                         <td>abc@gmail.com</td>
                         <td>
-                          <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
-                          <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
+                          <a href='#' className='icon icon-sm icon-primary' title='Send' onClick={() => setModalAddTemplateOpen(true)}><i className='bi bi-send'></i></a>
                         </td>
                       </tr>
                       <tr>
@@ -182,8 +179,7 @@ export default function History() {
                         <td>abc@gmail.com</td>
                         <td>abc@gmail.com</td>
                         <td>
-                          <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
-                          <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
+                          <a href='#' className='icon icon-sm icon-primary' title='Send' onClick={() => setModalAddTemplateOpen(true)}><i className='bi bi-send'></i></a>
                         </td>
                       </tr>
                       <tr>
@@ -195,8 +191,7 @@ export default function History() {
                         <td>abc@gmail.com</td>
                         <td>abc@gmail.com</td>
                         <td>
-                          <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
-                          <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
+                          <a href='#' className='icon icon-sm icon-primary' title='Send' onClick={() => setModalAddTemplateOpen(true)}><i className='bi bi-send'></i></a>
                         </td>
                       </tr>
                     </tbody>
@@ -206,7 +201,36 @@ export default function History() {
             </div>
           </div>
         </div>
+              <Modal isOpen={isModalAddTemplateOpen} onClose={() => setModalAddTemplateOpen(false)} title="Add Templates">
+          <form onSubmit={handleSubmit}>
+            {/* Subject */}
+            <div className="mb-3">
+              <label className="form-label">Subject</label>
+              <input
+                type="text"
+                className="form-control"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                placeholder="Enter subject"
+                required
+              />
+            </div>
 
+            {/* Body */}
+            <div className="mb-3">
+              <label className="form-label">Body</label>
+              <textarea
+                className="form-control"
+                name="body"
+                rows={6}
+                value={formData.body}
+                onChange={handleChange}
+                placeholder="Write your email content..."
+              ></textarea>
+            </div>
+          </form>
+        </Modal>
       </main>
     </>
   )

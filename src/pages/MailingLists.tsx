@@ -60,7 +60,7 @@ export default function MailingLists() {
         <div className="row mb-3 align-items-center">
           <div className="col-lg-6 col-md-6 col-sm-12">
             <div className="pagetitle">
-              <h1>Manage Roles</h1>
+              <h1>Mailing Lists</h1>
               <Breadcrumb />
             </div>
           </div>
@@ -72,7 +72,7 @@ export default function MailingLists() {
               <div className="row mt-3">
                 {/* Left Side */}
                 <div className="col-md-6">
-                  <h4>Mailing Lists</h4>
+                  {/* <h4>Mailing Lists</h4> */}
                 </div>
 
                 {/* Right Side */}
