@@ -5,7 +5,8 @@ import { Link, useLocation } from "react-router-dom";
 // optional mapping for human-friendly labels
 const breadcrumbNameMap: Record<string, string> = {
   "dashboard": "Dashboard",
-  "manage-clients": "Manage Clients",
+  // "manage-clients": "Manage Clients",
+  "manage-roles": "Manage Roles",
   "manage-users": "Manage Users",
   "job-cards": "Job Cards",
   "reports": "Reports",

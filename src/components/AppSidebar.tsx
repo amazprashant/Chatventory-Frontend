@@ -28,7 +28,7 @@ export default function AppSidebar() {
 
         <li className="nav-item">
           <NavLink
-            to="/manage-clients"
+            to="/manage-roles"
             className={({ isActive }) => `nav-link ${isActive ? "active" : "collapsed"}`}
           >
             <i className="bi bi-people-fill"></i>

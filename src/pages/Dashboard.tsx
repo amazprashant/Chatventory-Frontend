@@ -6,12 +6,12 @@ import BarGraph from "../components/BarGraph";
 
 
 const stats = [
-    { icon: "bi bi-briefcase fs-4", bgColor: "bg-primary", title: "Total Jobs", value: "512" },
-    { icon: "bi bi-clock-history fs-4", bgColor: "bg-warning", title: "Crane Time Today", value: "08:34 hrs" },
-    { icon: "bi bi-activity fs-4", bgColor: "bg-success", title: "Active Jobs", value: "23" },
-    { icon: "bi bi-building fs-4", bgColor: "bg-danger", title: "Cranes On Site", value: "11" },
-    { icon: "bi bi-briefcase fs-4", bgColor: "bg-primary", title: "Total Jobs", value: "512" },
-    { icon: "bi bi-clock-history fs-4", bgColor: "bg-warning", title: "Crane Time Today", value: "08:34 hrs" },
+    { icon: "bi bi-briefcase fs-4", bgColor: "bg-primary", title: "No. of Customer", value: "512" },
+    { icon: "bi bi-clock-history fs-4", bgColor: "bg-warning", title: "Total Customer Logged In", value: "08:34 hrs" },
+    { icon: "bi bi-activity fs-4", bgColor: "bg-success", title: "Total Email Sent", value: "23" },
+    { icon: "bi bi-building fs-4", bgColor: "bg-danger", title: "Bounce %", value: "11" },
+    { icon: "bi bi-briefcase fs-4", bgColor: "bg-primary", title: "Click % ", value: "512" },
+    { icon: "bi bi-clock-history fs-4", bgColor: "bg-warning", title: "Open %", value: "08:34 hrs" },
 ];
 export default function Dashboard() {
 

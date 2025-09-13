@@ -22,7 +22,7 @@ function AppRoutes() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="dashboard" element = {<Dashboard/>} />
-        <Route path="manage-clients" element = {<ManageRoles/>} />
+        <Route path="manage-roles" element = {<ManageRoles/>} />
         <Route path="manage-users" element = {<ManageUsers/>} />
         <Route path="manage-customers" element = {<Customers/>} />
         <Route path="prospects" element = {<Prospects/>} />
