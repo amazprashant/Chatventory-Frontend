@@ -91,9 +91,8 @@ export default function Templates() {
                     <thead>
                       <tr>
                         <th>S.No.</th>
-                        <th>Name</th>
-                        <th>Type</th>
-                        <th>Recipent</th>
+                        <th>Template Name</th>
+                        <th>Subject</th>
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -102,7 +101,6 @@ export default function Templates() {
                         <td>#001</td>
                         <td>Client A</td>
                         <td>Client</td>
-                        <td>abc@gmail.com</td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                           <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
@@ -114,7 +112,6 @@ export default function Templates() {
                         <td>#001</td>
                         <td>Client A</td>
                         <td>Client</td>
-                        <td>abc@gmail.com</td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                           <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
@@ -125,7 +122,6 @@ export default function Templates() {
                         <td>#001</td>
                         <td>Client A</td>
                         <td>Client</td>
-                        <td>abc@gmail.com</td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                           <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
@@ -136,7 +132,6 @@ export default function Templates() {
                         <td>#001</td>
                         <td>Client A</td>
                         <td>Client</td>
-                        <td>abc@gmail.com</td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                           <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
@@ -147,7 +142,6 @@ export default function Templates() {
                         <td>#001</td>
                         <td>Client A</td>
                         <td>Client</td>
-                        <td>abc@gmail.com</td>
                         <td>
                           <a href='#' className='icon icon-sm icon-primary' title='Edit'><i className='bi bi-pencil-fill'></i></a>
                           <a href='#' className='icon icon-sm icon-danger' title='Delete'><i className='bi bi-trash-fill'></i></a>
