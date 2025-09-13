@@ -136,26 +136,6 @@ export default function AppSidebar() {
 
         <li className="nav-item">
           <NavLink
-            to="/edit-profile#change-password"
-            className={({ isActive }) => `nav-link ${isActive ? "active" : "collapsed"}`}
-          >
-            <i className="bi bi-lock-fill"></i>
-            <span>Change Password</span>
-          </NavLink>
-        </li>
-
-        <li className="nav-item">
-          <NavLink
-            to="/error-404"
-            className={({ isActive }) => `nav-link ${isActive ? "active" : "collapsed"}`}
-          >
-            <i className="bi bi-bug-fill"></i>
-            <span>Error Page</span>
-          </NavLink>
-        </li>
-
-        <li className="nav-item">
-          <NavLink
             to="/contact"
             className={({ isActive }) => `nav-link ${isActive ? "active" : "collapsed"}`}
           >

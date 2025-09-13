@@ -1,14 +1,35 @@
+import { useState, useEffect } from "react";
 
 export default function AppHeader() {
-    return (
-<header id="header" className="header fixed-top d-flex align-items-center">
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
-    <div className="d-flex align-items-center justify-content-between">
-        <a href="dashboard.php" className="logo-header d-flex align-items-center">
-            <img src="assets/img/CMS.png" alt="" />
+  const handleToggle = () => {
+    setSidebarOpen((prev) => !prev);
+  };
+
+  // Add/remove body class when sidebarOpen changes
+  useEffect(() => {
+    if (sidebarOpen) {
+      document.body.classList.add("toggle-sidebar");
+    } else {
+      document.body.classList.remove("toggle-sidebar");
+    }
+  }, [sidebarOpen]);
+
+  return (
+    <header id="header" className="header fixed-top d-flex align-items-center">
+      <div className="d-flex align-items-center justify-content-between">
+        <a href="/dashboard" className="logo-header d-flex align-items-center">
+          <img src="assets/img/CMS.png" alt="" />
         </a>
-        <i className="bi bi-list toggle-sidebar-btn project-color"></i>
-    </div>
+        {/* Toggle button with click handler */}
+        <i
+          className="bi bi-list toggle-sidebar-btn project-color"
+          onClick={handleToggle}
+          role="button"
+          aria-label="Toggle Sidebar"
+        ></i>
+      </div>
 
     <nav className="header-nav ms-auto">
         <ul className="d-flex align-items-center">
